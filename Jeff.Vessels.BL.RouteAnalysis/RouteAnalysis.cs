@@ -21,10 +21,6 @@ namespace Jeff.Vessels.BL.RouteAnalysis
 
             try
             {
-                //TODO: check if this is required
-                //Iterate through each position and calculate Distance and Speed between each position
-                GetDistanceAndSpeed(ref vesselsInfo);
-
                 //Determine the intersection points for each vessel path
                 //iterating through vessel paths
                 for (int i = 0; i < vesselsInfo.Vessels.Count; i++)
@@ -115,7 +111,7 @@ namespace Jeff.Vessels.BL.RouteAnalysis
         /// Iterate through each position and calculate Distance and Speed between each position
         /// </summary>
         /// <param name="vesselsInfo"></param>
-        private static void GetDistanceAndSpeed(ref VesselsInfo vesselsInfo)
+        public static void GetDistanceAndSpeed(ref VesselsInfo vesselsInfo)
         {
             foreach (VesselInfo vessel in vesselsInfo.Vessels)
             {
@@ -144,7 +140,7 @@ namespace Jeff.Vessels.BL.RouteAnalysis
         /// <returns></returns>
         private static double GetSpeed(double distanceToPrevPosition, TimeSpan timeSpan)
         {
-            return distanceToPrevPosition / timeSpan.Hours;
+            return distanceToPrevPosition / timeSpan.Minutes * 60;
         }
 
         /// <summary>
