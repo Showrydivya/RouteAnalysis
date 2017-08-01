@@ -25,7 +25,6 @@ namespace Jeff.Vessels.RouteAnalysisTool
                 RouteAnalysis.GetDistanceAndSpeed(ref vesselsInfo);
 
                 //Display Average Speed and Total Distance
-                // Calculate average speed by ta
                 vesselsInfo.Vessels.ForEach(vessel =>
                 {
                     Console.WriteLine("Vessel Name: '{0}'", vessel.Name);
